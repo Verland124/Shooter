@@ -816,7 +816,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   timeOfDay: 0.25
-  dayDuration: 600
+  dayDuration: 6
   gameUI: {fileID: 1558643935}
 --- !u!4 &1453693654
 Transform:

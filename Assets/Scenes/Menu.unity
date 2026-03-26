@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: bd5cfeb4ba6996947b6ce2be85859a5c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 97d50308f811f3549b5422882e92872c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: bd5cfeb4ba6996947b6ce2be85859a5c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 97d50308f811f3549b5422882e92872c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2577,7 +2577,7 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 3509143933984026067, guid: c7750f3be58444644877e15334b97064, type: 3}
+  playerPrefab: {fileID: 5971811575664989132, guid: b6300f2a50e515d4294452c41c5d2f4e, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
-  playerCameraPrefab: {fileID: 0}
+  playerCameraPrefab: {fileID: 8437877042658938037, guid: 843898727eed8e043866c7086d66eac0, type: 3}
   spawnPoints:
   - {fileID: 1052767700035442197, guid: a91c0f90b0dcee1468ad82825f78d3fb, type: 3}
   - {fileID: 7007641819717087526, guid: f9eb7c25dd83b2d4b809f6c115b81386, type: 3}
