@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9191123065428058080}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,17 +270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa99632d5fd2f441b269970e1434894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraC
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  smoothSpeed: 10
-  player: {fileID: 0}
-  cameraPivot: {fileID: 0}
-  playerCamera: {fileID: 0}
-  thirdPersonOffset: {x: 0, y: 1.5, z: -3}
-  thirdPersonDistance: 3
   mouseSensitivity: 2
   smoothTime: 0.1
   minVerticalAngle: -80
   maxVerticalAngle: 80
   switchKey: 118
+  thirdPersonOffset: {x: 0, y: 1.5, z: -3}
+  firstPersonOffset: {x: 0, y: 1.6, z: 0}

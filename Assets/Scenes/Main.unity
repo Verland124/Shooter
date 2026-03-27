@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: -490949530435851880, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5783a9c496753964a93b1e5a0d51865e, type: 2}
+      objectReference: {fileID: 2100000, guid: c4090df9bf8c8684d95777b6d0eec7ec, type: 2}
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03
@@ -816,7 +816,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   timeOfDay: 0.25
-  dayDuration: 6
+  dayDuration: 10.64
   gameUI: {fileID: 1558643935}
 --- !u!4 &1453693654
 Transform:
@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: -9148325724477660143, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5783a9c496753964a93b1e5a0d51865e, type: 2}
+      objectReference: {fileID: 2100000, guid: c4090df9bf8c8684d95777b6d0eec7ec, type: 2}
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01
@@ -933,7 +933,7 @@ PrefabInstance:
     - target: {fileID: -6596983170621015899, guid: 603970f97e50c56488ec3c5a6febd940, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5783a9c496753964a93b1e5a0d51865e, type: 2}
+      objectReference: {fileID: 2100000, guid: c4090df9bf8c8684d95777b6d0eec7ec, type: 2}
     - target: {fileID: 100000, guid: 603970f97e50c56488ec3c5a6febd940, type: 3}
       propertyPath: m_Name
       value: Tree_05

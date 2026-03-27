@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.842827
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00000008168172
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -28.595745
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82,11 +82,11 @@ PrefabInstance:
     - target: {fileID: -5232440660329555891, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ccae5b3b82eab5844a40a2924402dfbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 2186da33773d1f64aa1509ff4fd5009f, type: 2}
     - target: {fileID: 435857624235031271, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ccae5b3b82eab5844a40a2924402dfbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 2186da33773d1f64aa1509ff4fd5009f, type: 2}
     - target: {fileID: 919132149155446097, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_Name
       value: SM_MedievalMaleLite_01
@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 5576423348823522175, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ccae5b3b82eab5844a40a2924402dfbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 2186da33773d1f64aa1509ff4fd5009f, type: 2}
     - target: {fileID: 5866666021909216657, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: m_Controller
       value: 
@@ -106,11 +106,11 @@ PrefabInstance:
     - target: {fileID: 8208162130937183985, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ccae5b3b82eab5844a40a2924402dfbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 2186da33773d1f64aa1509ff4fd5009f, type: 2}
     - target: {fileID: 8799317399690339623, guid: 19842a56ef341f2428dcd5ff7e86eff6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ccae5b3b82eab5844a40a2924402dfbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 2186da33773d1f64aa1509ff4fd5009f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -191,7 +191,7 @@ MonoBehaviour:
   playerName: 
   walkSpeed: 5
   runSpeed: 7
-  jumpForce: 1.5
+  jumpForce: 3
   gravity: -9.81
   rotationSpeed: 5
   footstepSound: {fileID: 0}
