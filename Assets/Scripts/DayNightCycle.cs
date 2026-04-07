@@ -10,7 +10,7 @@ public class DayNightCycle : NetworkBehaviour
 
     [Header("Время")]
     [SyncVar] public float timeOfDay = 0.25f;
-    public float dayDuration = 6f; // 10 минут день
+    public float dayDuration = 600f; // 10 минут день
 
     [Header("UI")]
     [SerializeField] private GameUI gameUI;
