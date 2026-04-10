@@ -162,6 +162,7 @@ public class PlayerController1 : NetworkBehaviour
         CmdSendAnimatorParams(moveX, moveZ, isRunning, isGrounded);
 
         UpdateAnimations(moveDirection.magnitude);
+        UpdateFootsteps(moveDirection.magnitude);
 
         void UpdateFootsteps(float speedMagnitude)
         {
@@ -195,6 +196,9 @@ public class PlayerController1 : NetworkBehaviour
     [Command]
     void CmdPunch()
     {
+        // Начинаем кулдаун на сервере
+        StartCoroutine(AttackCooldown());
+
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, punchRange))
         {
@@ -208,7 +212,6 @@ public class PlayerController1 : NetworkBehaviour
 
         // Анимация удара на всех клиентах
         RpcPlayPunchAnimation();
-        StartCoroutine(AttackCooldown());
     }
 
     IEnumerator AttackCooldown()
@@ -329,51 +332,23 @@ public class PlayerController1 : NetworkBehaviour
         float vertical = Input.GetAxis("Vertical");
         bool isRunning = Input.GetKey(KeyCode.LeftShift) && isGrounded;
 
-        if (speedMagnitude > 0.1f)
+        // Для локального игрока устанавливаем параметры напрямую
+        if (isLocalPlayer)
         {
-            if (isRunning)
+            if (speedMagnitude > 0.1f)
             {
                 animator.SetFloat("MoveX", horizontal);
                 animator.SetFloat("MoveZ", vertical);
-                animator.SetBool("Running", true);
+                animator.SetBool("Running", isRunning);
             }
             else
             {
-                animator.SetFloat("MoveX", horizontal);
-                animator.SetFloat("MoveZ", vertical);
-                animator.SetBool("Running", false);
+                animator.SetFloat("MoveX", 0);
+                animator.SetFloat("MoveZ", 0);
             }
-        }
-        else
-        {
-            animator.SetFloat("MoveX", 0);
-            animator.SetFloat("MoveZ", 0);
-        }
 
-        animator.SetBool("Grounded", isGrounded);
-        animator.SetBool("Crouch_b", isCrouching);
-    }
-
-    void UpdateFootsteps(float speedMagnitude)
-    {
-        // Если персонаж стоит на месте — сбрасываем таймер и выходим
-        if (!isGrounded || speedMagnitude <= 0.1f || footstepSound == null)
-        {
-            footstepTimer = 0f;
-            return;
-        }
-
-        // Уменьшаем таймер
-        footstepTimer -= Time.deltaTime;
-
-        // Пора сделать шаг
-        if (footstepTimer <= 0f)
-        {
-            float stepDelay = isRunning ? 0.35f : 0.55f;
-            footstepTimer = stepDelay;
-
-            // Воспроизводим звук
-            audioSource.PlayOneShot(footstepSound);
+            animator.SetBool("Grounded", isGrounded);
+            animator.SetBool("Crouch_b", isCrouching);
         }
     }
     [TargetRpc]
