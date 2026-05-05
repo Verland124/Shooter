@@ -837,6 +837,7 @@ GameObject:
   - component: {fileID: -4334142804418801458}
   - component: {fileID: -8890941504067107086}
   - component: {fileID: -272316652488809698}
+  - component: {fileID: -4570188928772997546}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -972,7 +973,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 5
+  walkSpeed: 3
+  runSpeed: 6
+  jumpHeight: 1.5
+  gravity: -9.81
+  rotationSpeed: 10
 --- !u!114 &-8890941504067107086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,6 +1027,31 @@ MonoBehaviour:
       Synchronize: 1
       ParameterType: 9
   AnimatorParametersExpanded: 0
+--- !u!143 &-4570188928772997546
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675346761656247329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1829144132083681293
 GameObject:
   m_ObjectHideFlags: 0

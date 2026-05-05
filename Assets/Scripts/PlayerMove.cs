@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 using Unity.Cinemachine; // Если используешь Cinemachine 3.x
 
@@ -80,7 +81,7 @@ public class PlayerMove : NetworkBehaviour
 
         // 5. Передаем данные в Аниматор
         // Если стоим - 0, идем - 1, бежим - 2
-        float animSpeed = move.magnitude * (isRunning ? 2f : 1f);
+        float animSpeed = move.magnitude * (isRunning ? 1f : 0.5f);
         animator.SetFloat("Speed", animSpeed, 0.1f, Time.deltaTime);
         animator.SetBool("IsCrouching", isCrouching);
     }
