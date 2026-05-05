@@ -1,51 +1,28 @@
-using Unity.Netcode;
-using UnityEngine;
-
-public class PlayerMove : NetworkBehaviour
+void Update()
 {
-    public float speed = 5f;
-    private Animator animator;
+    if (!IsOwner) return;
 
-    void Start()
+    float inputHorizontal = Input.GetAxis("Horizontal");
+    float inputVertical = Input.GetAxis("Vertical");
+    
+    // БЕГ: Проверяем, зажат ли левый Shift
+    bool isRunning = Input.GetKey(KeyCode.LeftShift);
+    
+    // Считаем скорость: если бежим, умножаем на 2 (чтобы в Blend Tree перейти к бегу)
+    float moveSpeed = new Vector2(inputHorizontal, inputVertical).magnitude;
+    if (isRunning) moveSpeed *= 2f; 
+
+    // ПЕРЕДАЕМ В АНИМАТОР
+    animator.SetFloat("Speed", moveSpeed, 0.1f, Time.deltaTime);
+
+    // ПРЫЖОК: Срабатывает один раз при нажатии
+    if (Input.GetKeyDown(KeyCode.Space))
     {
-        GetComponentInChildren<Animator>();
-        animator = GetComponent<Animator>();
+        animator.SetTrigger("Jump");
+        // Тут должна быть твоя физика прыжка для CharacterController
     }
-    void Update()
-    {
-        // Только если это наш персонаж
-        if (!IsOwner) return;
 
-        float inputHorizontal = Input.GetAxis("Horizontal");
-        float inputVertical = Input.GetAxis("Vertical");
-
-        if (inputHorizontal != 0 || inputVertical != 0)
-        {
-            Vector3 move = new Vector3(inputHorizontal, 0, inputVertical).normalized * speed * Time.deltaTime;
-            transform.Translate(move);
-        }
-        if (IsOwner)
-        {
-            Vector3 cameraForward = Camera.main.transform.forward;
-            cameraForward.y = 0;
-            cameraForward.Normalize();
-
-            Vector3 cameraRight = Camera.main.transform.right;
-            cameraRight.y = 0;
-            cameraRight.Normalize();
-
-            Vector3 moveDirection = (cameraForward * inputVertical + cameraRight * inputHorizontal).normalized;
-            if (moveDirection.magnitude > 0.1f)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-                animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
-            }
-            else
-            {
-                animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
-            }
-        }
-
-    }
+    // ПРИСЕДАНИЕ: Пока держим кнопку — приседаем
+    bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+    animator.SetBool("IsCrouching", isCrouching);
 }
