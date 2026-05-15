@@ -17,6 +17,8 @@ public class PlayerMove : NetworkBehaviour
     private NetworkAnimator networkAnimator;
     private Vector3 velocity;
     private bool isGrounded;
+    private float attackCooldown = 2.0f;
+    private float nextAttackTime = 0.0f;
 
     void Start()
     {
@@ -44,11 +46,12 @@ public class PlayerMove : NetworkBehaviour
 
         HandleMovement();
         HandleJumpAndGravity();
-if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
-{
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime) // Левая кнопка мыши
+        {
 
-        DoAttack();
-}
+            DoAttack();
+            nextAttackTime = Time.time + attackCooldown;
+        }
     }
 
     private void HandleMovement()
@@ -116,16 +119,16 @@ if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-private void DoAttack()
-{
-    // Проигрываем анимацию у себя и у других
-    if (networkAnimator != null)
-        networkAnimator.SetTrigger("Attack");
-    else
-        animator.SetTrigger("Attack");
+    private void DoAttack()
+    {
+        // Проигрываем анимацию у себя и у других
+        if (networkAnimator != null)
+            networkAnimator.SetTrigger("Attack");
+        else
+            animator.SetTrigger("Attack");
 
-    // Здесь позже добавим проверку: попали ли мы по дереву или врагу
-    Debug.Log("Атака!");
-}
+        // Здесь позже добавим проверку: попали ли мы по дереву или врагу
+        Debug.Log("Атака!");
+    }
 
 }
