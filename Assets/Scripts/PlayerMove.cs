@@ -44,6 +44,11 @@ public class PlayerMove : NetworkBehaviour
 
         HandleMovement();
         HandleJumpAndGravity();
+if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
+{
+
+        DoAttack();
+}
     }
 
     private void HandleMovement()
@@ -111,4 +116,16 @@ public class PlayerMove : NetworkBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+private void DoAttack()
+{
+    // Проигрываем анимацию у себя и у других
+    if (networkAnimator != null)
+        networkAnimator.SetTrigger("Attack");
+    else
+        animator.SetTrigger("Attack");
+
+    // Здесь позже добавим проверку: попали ли мы по дереву или врагу
+    Debug.Log("Атака!");
+}
+
 }
